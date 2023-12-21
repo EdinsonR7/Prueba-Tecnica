@@ -1,0 +1,89 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.buscador{
+display: flex;
+gap: 10px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.buscador input{
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buscador input:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.buscador button{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.buscador button:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.container{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin-bottom: 5%;
+ margin-top: 5%;
+}
+
+.container button,
+.container a {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #1173d5;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container button:hover{
+  background-color: #fff;
+  color: #1173d5;
+}
+
+.resultado{
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+.resultado h2{
+  margin-top: 12px;
+  background-color: #1173d5;
+  color: white;
+}
+
+.resultado p{
+  font-size: 20px;
+font-weight: 600;
+color: crimson;
+}
+
+
+
