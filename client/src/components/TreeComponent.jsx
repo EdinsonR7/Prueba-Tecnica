@@ -1,18 +1,17 @@
-import Tree from 'react-d3-tree';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import Tree from "react-d3-tree";
+import PropTypes from "prop-types";
+import { useState } from "react";
 
 const TreeComponent = ({ data }) => {
-  const treeContainerStyle = { width: '100%', height: '100%' };
+  const treeContainerStyle = { width: "100%", height: "100%" };
 
   const convertirDatosParaArbol = (datos) => {
     return {
-      name: 'Raíz',
+      name: "Raíz",
       children: datos.map((señal) => ({
         name: señal.nombre,
         attributes: {
           mmspath: señal.mmspath,
-          // Incluye más atributos según tus necesidades
         },
       })),
     };
@@ -21,19 +20,16 @@ const TreeComponent = ({ data }) => {
   const datosParaArbol = convertirDatosParaArbol(data);
   const [focusedNode, setFocusedNode] = useState(null);
 
-  // Configuración del Tooltip para mostrar información adicional
   const renderTooltip = (model) => {
     const { name, attributes } = model.nodeData;
     return (
       <div>
         <p>{`Nombre: ${name}`}</p>
         <p>{`MMSPath: ${attributes.mmspath}`}</p>
-        {/* Agrega más información aquí según tus necesidades */}
       </div>
     );
   };
 
-  // Configuración para ampliar el nodo al acercar el mouse
   const renderCustomNodeElement = ({ nodeDatum, toggleNode }) => (
     <g
       onClick={() => toggleNode(nodeDatum)}
@@ -46,13 +42,13 @@ const TreeComponent = ({ data }) => {
         y="0"
         textAnchor="middle"
         dy=".3em"
-        fill={focusedNode === nodeDatum ? 'white' : 'black'}
+        fill={focusedNode === nodeDatum ? "white" : "black"}
       >
-        {nodeDatum.name.split('\n').map((line, index) => (
-        <tspan key={index} x="0" dy="1.2em">
-          {line}
-        </tspan>
-      ))}
+        {nodeDatum.name.split("\n").map((line, index) => (
+          <tspan key={index} x="0" dy="1.2em">
+            {line}
+          </tspan>
+        ))}
       </text>
     </g>
   );
@@ -68,10 +64,10 @@ const TreeComponent = ({ data }) => {
         renderCustomTooltip={renderTooltip}
         nodeSvgShape={{
           shapeProps: {
-            stroke: 'black',
+            stroke: "black",
           },
         }}
-        separation={{ siblings: 1.5, nonSiblings: 2 }} // Ajusta el espaciado entre nodos
+        separation={{ siblings: 1.5, nonSiblings: 2 }}
         initialDepth={1}
       />
     </div>
